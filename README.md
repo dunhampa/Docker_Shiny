@@ -20,6 +20,11 @@ docker build -t shiny-app-dock .
 ## Run container and mount local directories where you can put in shiny apps for testing.
 
 ```
-docker run -d -p 3838:3838 -p 8787:8787  -e PASSWORD=test123  -v ~/srv/shinyapps/:/srv/shiny-server/  -v ~/srv/shinylog/:/var/log/shiny-server/  geo-leaflet
+docker run -d -p 3838:3838 -p 8787:8787  -e PASSWORD=test123  -v ~/srv/shinyapps/:/srv/shiny-server/  -v ~/srv/shinylog/:/var/log/shiny-server/  shiny-app-dock
  ```
+ 
+ Then you can for example access:
+ Then: http://localhost:3838/Text_Predict_Shiny/
+
+ which is in my ~/srv/shinyapps folder
 
