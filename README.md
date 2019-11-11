@@ -28,3 +28,12 @@ docker run -d -p 3838:3838 -p 8787:8787  -e PASSWORD=test123  -v ~/srv/shinyapps
 
  which is in my ~/srv/shinyapps folder
 
+
+If you go to 
+
+http://localhost:8787/
+
+you login with 
+
+user: rstudio
+pwd: as specified in docker run (i.e "test123")
