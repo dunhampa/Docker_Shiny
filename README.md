@@ -20,7 +20,7 @@ docker build -t shiny-app-dock .
 ## Run container and mount local directories where you can put in shiny apps for testing.
 
 ```
-docker run -d -p 3838:3838 -p 8787:8787  -e PASSWORD=test123  -v ~/srv/shinyapps/:/srv/shiny-server/  -v ~/srv/shinylog/:/var/log/shiny-server/  shiny-app-dock
+docker run -d -p 3838:3838 -p 8787:8787  -e PASSWORD=test123  -v ~/srv/shinyapps/:/srv/shiny-server/  -v ~/srv/shinylog/:/var/log/shiny-server/  -v ~/srv/home/rstudio:/home/rstudio shiny-app-dock 
  ```
  
  Then you can for example access:
