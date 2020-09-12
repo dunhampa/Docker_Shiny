@@ -1,4 +1,4 @@
-FROM rocker/geospatial
+FROM rocker/geospatial:3.6.0
 
 RUN install2.r --error \
     --deps TRUE \
@@ -9,4 +9,4 @@ RUN install2.r --error \
  
 
 
-RUN export ADD=shiny && bash /etc/cont-init.d/add
+RUN export ADD=shiny && /bin/bash /etc/cont-init.d/add
