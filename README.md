@@ -7,26 +7,20 @@ This workflow supports R and Shiny apps with libraries as specified in the Docke
 
 ## Build Dockerfile for Shiny apps that will sourced on local volume
 
-```
-cd Shiny_MountApps
-```
 
 ```
-docker build -t shiny-app-dock .
+docker build -t geo-leaflet .  
 ```
-
 
 
 ## Run container and mount local directories where you can put in shiny apps for testing.
 
 ```
-docker run -d -p 3838:3838 -p 8787:8787  -e PASSWORD=test123  -v ~/srv/shinyapps/:/srv/shiny-server/  -v ~/srv/shinylog/:/var/log/shiny-server/  -v ~/srv/home/rstudio:/home/rstudio shiny-app-dock 
+docker run -p 3838:3838 -p 8787:8787  -e PASSWORD=test123  -v "$(pwd)"/shinyapps/:/srv/shiny-server/  -v "$(pwd)"/shinylog/:/var/log/shiny-server/  -v "$(pwd)"/rstudio:/home/rstudio geo-leaflet
  ```
  
  Then you can for example access:
- Then: http://localhost:3838/Text_Predict_Shiny/
-
- which is in my ~/srv/shinyapps folder
+ Then: http://localhost:3838/ohio-county-birth-weights/
 
 
 If you go to 
